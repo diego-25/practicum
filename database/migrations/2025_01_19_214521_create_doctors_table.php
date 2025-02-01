@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('doctors', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('specialty');
+            $table->string('speciality');
             $table->string('contact');
             $table->timestamps();
         });

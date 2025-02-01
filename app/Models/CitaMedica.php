@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Doctor extends Model
+class CitaMedica extends Model
 {
     use HasFactory;
 
@@ -15,8 +15,14 @@ class Doctor extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'speciality',
-        'contact',
+        'fecha',
+        'hora',
+        'paciente_id',
+        'doctor_id',
+        'enfermedad_id',
     ];
+
+    public function enfermedad(){
+        return $this->belongsTo(Enfermedad::class);
+    }
 }
